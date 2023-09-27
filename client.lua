@@ -141,7 +141,7 @@ end
 local function startTestDriveTimer(testDriveTime, prevCoords)
     local gameTimer = GetGameTimer()
     CreateThread(function()
-	Wait(2000) -- Avoids the condition to run before entering vehicle
+    Wait(2000) -- Avoids the condition to run before entering vehicle
         while inTestDrive do
             if GetGameTimer() < gameTimer + tonumber(1000 * testDriveTime) then
                 local secondsLeft = GetGameTimer() - gameTimer
@@ -470,7 +470,7 @@ RegisterNetEvent('qb-vehicleshop:client:TestDriveReturn', function()
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:vehCategories', function()
-	local catmenu = {}
+    local catmenu = {}
     local categoryMenu = {
         {
             header = Lang:t('menus.goback_header'),
@@ -480,7 +480,7 @@ RegisterNetEvent('qb-vehicleshop:client:vehCategories', function()
             }
         }
     }
-	for k, v in pairs(QBCore.Shared.Vehicles) do
+    for k, v in pairs(QBCore.Shared.Vehicles) do
         if type(QBCore.Shared.Vehicles[k]["shop"]) == 'table' then
             for _, shop in pairs(QBCore.Shared.Vehicles[k]["shop"]) do
                 if shop == insideShop then
